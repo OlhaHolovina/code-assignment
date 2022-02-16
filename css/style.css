@@ -1,0 +1,129 @@
+/* Removing global margin */
+body {
+    margin: 0;
+}
+
+/*smooth scroll*/
+html {
+    scroll-behavior: smooth;
+}
+/*common class*/
+.container {
+    display: flex;
+}
+
+/*header*/
+.header-section {
+    width: 100%;
+    padding: 20px 20px 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.logotype {
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+#name-block {
+    display: inline-block;
+    text-align: right;
+    width: 155px;
+}
+
+.name {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.occupation {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 200;
+    margin-top: -3px;
+}
+.specification {
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    margin-top: -14px;
+}
+
+#humber-logo {
+    float: right;
+    margin-right: 50px;
+}
+
+form, .result{
+    width: 50%;
+    font-size: 150%;
+    padding-left: 5%;
+    padding-top: 3%;
+    margin: auto;
+}
+
+input, textarea{
+    display: block;
+    width: 70%;
+    margin: 10px 0 25px 0;
+    font-size: 60%;
+}
+button[type=submit]{
+    width: 150px;
+    font-size: 70%;
+    border-radius: 4px;
+    background-color: #61b1a3;
+    transition: 1s;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+button[type=submit]:hover{
+    background-color: #437f73;
+}
+/*Footer*/
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 100px;
+    line-height: 100px;
+    background-color: #e8e8e8;
+    text-transform: uppercase;
+    color: #2b2b2c;
+   }
+
+#footer-contacts {
+    margin: 0;
+    display: inline-block;
+    padding-right: 30%;
+    font-family: 'Raleway', sans-serif;
+    padding-left: 20px;
+    font-size: 16px;
+}
+.social-media a{
+    text-decoration: none;
+}
+.social-media img{
+    width: 40px;
+    margin-right: 50px;
+    float: right;
+    margin-top: 30px;
+}
+
+.result {
+    padding-top: 0;
+    font-size: 20px;
+}
+
+.result p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.result .icon {
+    margin-top: -14px;
+}
