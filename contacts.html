@@ -25,12 +25,17 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
   />
 
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
   <!--    CSS-->
   <link rel="stylesheet" href="./css/style.css">
-  <base href="/">
 </head>
 
 <body>
+
 <header class="container">
   <section class="header-section">
     <img class="logotype" src="https://raw.githubusercontent.com/OlhaHolovina/code-assignment/main/img/o_h_logo.png" alt="icon of logotype Olha Holovina">
@@ -48,7 +53,7 @@
   </section>
 </header>
 
-<main class="container">
+<main class="container animate__animated animate__slideInLeft animate__faster">
   <div class="row">
     <div class="col col-lg-7">
       <form id="form">
@@ -56,9 +61,11 @@
         <h3>Get forecast by location</h3>
 
         <div class="input-group">
-          <input type="text" id="city" class="form-control" placeholder="Enter the city">
+          <input type="text" id="city" class="form-control" placeholder="Enter the city" style="height: 60px;">
           <div class="input-group-append" id="submit-button">
-            <span class="input-group-text"><span class="material-icons">arrow_forward</span></span>
+            <span style="height: 60px;width: 60px;background: black" class="input-group-text">
+              <span style="margin-left: 5px;color: white;" class="material-icons">arrow_forward</span>
+            </span>
           </div>
         </div>
 
@@ -70,7 +77,9 @@
 <!--social media-->
 
 <footer>
-  Code challenge assignment | Student Olha Holovina © 2022. All rights reserved, I guess))
+  <section class="container">
+    Code challenge assignment | Student Olha Holovina © 2022. All rights reserved, I guess))
+  </section>
 </footer>
 
 <script>
