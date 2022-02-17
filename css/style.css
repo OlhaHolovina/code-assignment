@@ -7,10 +7,6 @@ body {
 html {
     scroll-behavior: smooth;
 }
-/*common class*/
-.container {
-    display: flex;
-}
 
 /*header*/
 .header-section {
@@ -39,22 +35,32 @@ html {
     font-size: 20px;
     color: white;
 }
-
-.occupation {
-    font-family: 'Raleway', sans-serif;
-    font-size: 13px;
-    font-weight: 200;
-    margin-top: -3px;
+.menu {
+    display: flex;
+    margin-left: auto;
+    padding-right: 20px;
+    text-transform: uppercase;
+    font: normal normal 300 20px/24px Montserrat;
+    align-self: end;
 }
-.specification {
-    font-family: 'Raleway', sans-serif;
-    font-size: 13px;
-    margin-top: -14px;
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.menu a:hover {
+    border-bottom: 2px solid white;
+}
+.menu a.active {
+    border-bottom: 2px solid white;
+    font-weight: bold;
 }
 
 #humber-logo {
-    float: right;
-    margin-right: 50px;
+    margin-top: -8px;
+    height: 63px;
 }
 
 form, .result{
