@@ -1,15 +1,27 @@
 function setData(element, data){
   element.innerHTML = `
     <section class="result">
-      <p>Location: ${data.location.name}, ${data.location.region}, ${data.location.country}</p>
-      <p>Temprature: ${data.current.temp_c} &#8451;</p>
-      <p class="icon">Wheather: ${data.current.condition.text} <img src="https:${data.current.condition.icon}" alt="wheater icon"></p>
+        <table class="table" style="vertical-align: middle;">
+          <thead>
+            <tr>
+              <th scope="col">Location</th>
+              <th scope="col">Temprature</th>
+              <th scope="col">Wheather</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>${data.location.name}, ${data.location.region}, ${data.location.country}</td>
+              <td>${data.current.temp_c} &#8451;</td>
+              <td>${data.current.condition.text} <img src="https:${data.current.condition.icon}" alt="wheater icon"></td>
+            </tr>
+          </tbody>
+        </table>
     </section>
   `;
 }
 
-function formSubmit(e) {
-  e.preventDefault();
+function formSubmit() {
 
   const city = document.getElementById('city').value;
   const result = document.getElementById('result');
@@ -46,11 +58,11 @@ const images = [
 ];
 const setBodyBackground = (images) => {
   const item = images[Math.floor(Math.random()*images.length)];
-  document.body.style.background = `url('/img/background/${item}.jpg') no-repeat`;
+  document.body.style.background = `url('/img/background/${item}.jpg') repeat`;
 }
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById('form').addEventListener('submit', formSubmit);
+  document.getElementById('submit-button').addEventListener('click', formSubmit);
   setBodyBackground(images);
 })
