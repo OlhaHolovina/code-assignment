@@ -38,14 +38,16 @@
 
 <header class="container">
   <section class="header-section">
-    <img class="logotype" src="https://raw.githubusercontent.com/OlhaHolovina/code-assignment/main/img/o_h_logo.png" alt="icon of logotype Olha Holovina">
+    <img class="logotype" src="https://raw.githubusercontent.com/OlhaHolovina/code-assignment/main/img/o_h_logo.png"
+         alt="icon of logotype Olha Holovina">
     <section id="name-block">
       <div class="name">
         <div style="margin-bottom: -10px">olha</div>
         <div>holovina</div>
       </div>
     </section>
-    <img id="humber-logo" src="https://raw.githubusercontent.com/OlhaHolovina/code-assignment/main/img/humber_logo.png" alt="Humber logo">
+    <img id="humber-logo" src="https://raw.githubusercontent.com/OlhaHolovina/code-assignment/main/img/humber_logo.png"
+         alt="Humber logo">
     <section class="menu">
       <a href="https://olhaholovina.github.io/code-assignment/index.html" style="margin-right: 60px;">forecast</a>
       <a class="active" href="https://olhaholovina.github.io/code-assignment/contacts.html">contacts</a>
@@ -57,19 +59,22 @@
   <div class="row">
     <div class="col col-lg-7">
       <form id="form">
-        <h2>Forecast me</h2>
-        <h3>Get forecast by location</h3>
+        <h2>contact me</h2>
 
-        <div class="input-group">
-          <input type="text" id="city" class="form-control" placeholder="Enter the city" style="height: 60px;">
-          <div class="input-group-append" id="submit-button">
-            <span style="height: 60px;width: 60px;background: black" class="input-group-text">
-              <span style="margin-left: 5px;color: white;" class="material-icons">arrow_forward</span>
-            </span>
-          </div>
+        <div class="input-group" style="display: flex; flex-direction: column;">
+          <input type="text" id="city" class="form-control" placeholder="Name"
+                 style="height: 60px;width: 100%;margin-bottom: 20px;">
+          <input type="email" id="email" class="form-control" placeholder="Email"
+                 style="height: 60px;width: 100%;margin-bottom: 20px;">
+          <textarea class="form-control" placeholder="Message" id="message" rows="3" style="width: 100%;"></textarea>
         </div>
 
-        <section id="result"></section>
+        <div style="text-align: right">
+          <button type="button" class="btn btn-dark" id="submit-button-contacts">
+            <span>Send form</span>
+            <span style="margin-left: 5px;color: white;vertical-align: middle;" class="material-icons">send</span>
+          </button>
+        </div>
       </form>
     </div>
   </div>
@@ -83,36 +88,10 @@
 </footer>
 
 <script>
-  function setData(element, data){
-    element.innerHTML = `
-    <section class="result">
-        <table class="table" style="vertical-align: middle;">
-          <thead>
-            <tr>
-              <th scope="col">Location</th>
-              <th scope="col">Temprature</th>
-              <th scope="col">Wheather</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>${data.location.name}, ${data.location.region}, ${data.location.country}</td>
-              <td>${data.current.temp_c} &#8451;</td>
-              <td>${data.current.condition.text} <img src="https:${data.current.condition.icon}" alt="wheater icon"></td>
-            </tr>
-          </tbody>
-        </table>
-    </section>
-  `;
-  }
-
   function formSubmit() {
 
-    const city = document.getElementById('city').value;
-    const result = document.getElementById('result');
-
-    fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=1`, {
-      "method": "GET",
+    fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?&days=1`, {
+      "method": "POST",
       "headers": {
         "x-rapidapi-host": "weatherapi-com.p.rapidapi.com",
         "x-rapidapi-key": "40da0fbf92mshfe7a448a5fbb967p17796ejsn5fe22c938fc1"
@@ -121,15 +100,12 @@
       .then(response => {
         return response.json()
       })
-      .then(data => {
-        if (data.error && data.error.message) {
-          throw new Error(data.error.message);
-        } else {
-          setData(result, data);
-        }
+      .then(() => {
+        throw new Error();
       })
       .catch(err => {
-        alert(err.message);
+        console.log(1)
+        alert('POST request was sent!');
       });
 
   }
@@ -142,13 +118,12 @@
     '05-weather',
   ];
   const setBodyBackground = (images) => {
-    const item = images[Math.floor(Math.random()*images.length)];
+    const item = images[Math.floor(Math.random() * images.length)];
     document.body.style.background = `url('https://raw.githubusercontent.com/OlhaHolovina/code-assignment/main/img/background/${item}.jpg') repeat`;
   }
 
-
   document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById('submit-button').addEventListener('click', formSubmit);
+    document.getElementById('submit-button-contacts').addEventListener('click', formSubmit);
     setBodyBackground(images);
   })
 </script>
