@@ -109,6 +109,8 @@ button[type=submit] {
 #submit-button-contacts {
   margin-top: 30px;
   cursor: pointer;
+  width: 264px;
+  height: 68px;
 }
 
 /*Footer*/
