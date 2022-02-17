@@ -58,7 +58,7 @@ const images = [
 ];
 const setBodyBackground = (images) => {
   const item = images[Math.floor(Math.random()*images.length)];
-  document.body.style.background = `url('/img/background/${item}.jpg') repeat`;
+  document.body.style.background = `url('https://raw.githubusercontent.com/OlhaHolovina/code-assignment/main/img/background/${item}.jpg') repeat`;
 }
 
 
