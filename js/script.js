@@ -37,6 +37,20 @@ function formSubmit(e) {
 
 }
 
+const images = [
+  '01-weather',
+  '02-weather',
+  '03-weather',
+  '04-weather',
+  '05-weather',
+];
+const setBodyBackground = (images) => {
+  const item = images[Math.floor(Math.random()*images.length)];
+  document.body.style.background = `url('/img/background/${item}.jpg') no-repeat`;
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('form').addEventListener('submit', formSubmit);
+  setBodyBackground(images);
 })
